@@ -2,6 +2,11 @@
 
 .home {
   .intro {
+    img {
+      margin: 7px;
+      border-radius: 21px;
+    }
+
     h2 {
       padding: 15px;
     }
@@ -10,15 +15,7 @@
       padding: 0 15px;
     }
   }
-  .header-img {
-    display: flex;
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-    }
-  }
   .music-images {
     display: flex;
     flex-wrap: wrap;
@@ -63,20 +60,13 @@
       }
 
       .btn {
-        color: #fff;
-        font-size: 17px;
-        height: 35px;
-        width: 105px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 7px;
-        background-color: #000;
+        .register(@btn-bg-color, fit-content);
         cursor: pointer;
-        font-weight: 400px;
-      }
-      .btn:hover {
-        background-color: rgb(37, 88, 21);
+        transition: background-color 0.25s;
+
+        &:hover {
+          background-color: @shuttle-gray;
+        }
       }
     }
 
@@ -88,6 +78,43 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
+      }
+    }
+  }
+}
+@media @phone {
+  .home {
+    .intro {
+      @margin: 4px;
+      img {
+        width: calc(100% - @margin * 2);
+        border-radius: 7px;
+        margin: @margin;
+      }
+    }
+    .music-images {
+      img {
+        width: 100%;
+        margin: 4px;
+      }
+      .tecnologia,
+      .ondas {
+        display: none;
+      }
+    }
+    .actual {
+      flex-direction: column-reverse;
+      padding: 7px;
+
+      .actual-img,
+      .actual-text {
+        width: 100%;
+        margin: 0;
+      }
+      .btn {
+        .register(@btn-bg-color, auto);
+        text-align: center;
+        padding: 7px;
       }
     }
   }
