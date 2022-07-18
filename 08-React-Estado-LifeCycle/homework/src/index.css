@@ -1,0 +1,18 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input {
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --border-color: #ff7300;
+  --btn-bkn-danger: #ff7300;
+  --btn-bkn-danger-hover: #b35305;
+  --bkn-transparent: #00000080;
+  --color-orange: #ff7300;
+  --white: #fff;
+}
